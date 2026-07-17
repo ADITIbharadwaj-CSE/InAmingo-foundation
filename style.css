@@ -1,0 +1,1034 @@
+/* -------------------------------------------------------------
+   INAMIGOS FOUNDATION LANDING PAGE DESIGN STYLESHEET
+   Architecture: High-Fidelity Responsive Layout Engine
+------------------------------------------------------------- */
+
+/* 1. Global Reset & Token Core Initialization */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-slate: #0F172A;      
+    --accent-blue: #1E40AF;        
+    --accent-gold: #D97706;        
+    --body-dark: #1E293B;          
+    --text-muted: #64748B;         
+    --bg-light: #F8FAFC;           
+    --bg-white: #FFFFFF;           
+    --border-slate: #E2E8F0;       
+    --font-stack: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+    --transition-fast: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--body-dark);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.context-badge {
+    display: inline-block;
+    background-color: #DBEAFE;
+    color: var(--accent-blue);
+    padding: 0.35rem 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-radius: 50px;
+    margin-bottom: 1.25rem;
+}
+
+/* 2. Top Bar Component */
+.top-info-strip {
+    background-color: var(--primary-slate);
+    color: #F1F5F9;
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-bottom: 1px solid #1E293B;
+}
+
+.strip-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.font-sizer button {
+    background: #334155;
+    color: white;
+    border: none;
+    padding: 1px 8px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+/* 3. Navigation Header Layer - SOLID PITCH BLACK BACKGROUND */
+.main-header {
+    background-color: #000000; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #111827;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 55px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.navigation-deck ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navigation-deck a {
+    text-decoration: none;
+    color: #F8FAFC;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+}
+
+.navigation-deck a:hover {
+    color: #38BDF8;
+}
+
+.navigation-deck .cta-nav {
+    background-color: var(--accent-blue);
+    color: white;
+    padding: 0.55rem 1.25rem;
+    border-radius: 6px;
+}
+
+.navigation-deck .cta-nav:hover {
+    background-color: var(--accent-gold);
+}
+
+/* 4. Completely Clean Refined Hero Section */
+.hero-canvas {
+    position: relative;
+    background: url('assets/hero-bg.jpeg') center/cover no-repeat;
+    background-color: #090D16;
+    color: white;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+    box-border: 15px solid #1E293B;
+}
+
+.canvas-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(9, 13, 22, 0.55) 0%, rgba(15, 23, 42, 0.8) 100%);
+    z-index: 1;
+}
+
+.canvas-content-box {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.canvas-badge {
+    color: #60A5FA;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* BIG BOLD MASTER ENTRY TITLE DISPLAY */
+.master-brand-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+.sparkle-subtitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #ffffff 20%, #fcd34d 40%, #fbbf24 60%, #ffffff 80%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textShine 4s linear infinite;
+}
+
+@keyframes textShine {
+    to { background-position: 200% center; }
+}
+
+.canvas-lead-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #E2E8F0;
+    margin-bottom: 2.5rem;
+    max-width: 750px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.canvas-action-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Global Functional Button Architecture */
+.btn {
+    display: inline-block;
+    padding: 0.85rem 2.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--transition-fast);
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-gold {
+    background-color: var(--accent-gold);
+    color: white;
+    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+}
+
+.btn-gold:hover {
+    background-color: #b45309;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* 5. Continuous Edge Shining Mask Animation Engine */
+.shine-glow-edge {
+    position: relative;
+    background: var(--bg-white);
+    z-index: 1;
+    border-radius: 12px;
+}
+
+.shine-glow-edge::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    background: linear-gradient(45deg, #f59e0b, #d97706, #3b82f6, #f59e0b);
+    background-size: 400%;
+    z-index: -1;
+    border-radius: 13px;
+    opacity: 0.12;
+    transition: var(--transition-fast);
+}
+
+.shine-glow-edge:hover::before {
+    opacity: 1;
+    animation: dynamicShine 6s linear infinite;
+}
+
+@keyframes dynamicShine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 6. Institutional Overview Section Layout */
+/* 6. Institutional Overview Section Layout - STRETCHED TEXT & SHINE BORDER FIX */
+.about-deck {
+    padding: 6rem 0;
+    background-color: var(--bg-white);
+}
+
+/* Updated grid structure: Adjusted to 1.1fr 1fr to make the left text panel slightly wider */
+.about-grid-matrix {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 5rem; /* Expanded gap to give more breathing room */
+    align-items: stretch; /* Stretches both left and right columns to make them equal in height */
+}
+
+/* Left Column Styling: Uses flexbox to stretch and space the text evenly to match the full height */
+.about-text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spreads the content beautifully from top to bottom */
+    height: 100%;
+    padding: 1rem 0; /* Minimal padding for spacing */
+}
+
+.about-text-column h3 {
+    font-size: 2.75rem; /* Slightly larger title */
+    font-weight: 800;
+    color: var(--primary-slate);
+    margin-bottom: 1.25rem;
+}
+
+.about-text-column p {
+    font-size: 1.1rem; /* Marginally increased text readability */
+    line-height: 1.75;
+    color: var(--body-dark);
+    margin-bottom: 1rem;
+}
+
+.about-extra-lead {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.legal-badge-strip {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: auto; /* Pushes badges strictly to the very bottom of the stretched layout */
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+.about-graphic-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the graphic block and caption align perfectly with the left height */
+    height: 100%;
+}
+
+.animate-subtle-float {
+    animation: visualFloat 4s ease-in-out infinite;
+}
+
+@keyframes visualFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* PREMIUM ANIMATED GOLD SHINE BORDER FOR THE BIG IMAGE */
+.gold-shine-card {
+    position: relative;
+    border-radius: 12px;
+    background: #fff;
+    padding: 3px; /* Creates the gap space for the border glow */
+    z-index: 1;
+}
+
+/* Generates the continuous animated gold-glowing frame behind the image */
+.gold-shine-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #fbbf24, #d97706, #fef08a, #d97706, #fbbf24);
+    background-size: 400% 400%;
+    border-radius: 14px;
+    z-index: -1;
+    animation: goldGlowEffect 5s ease infinite;
+    opacity: 0.95;
+    box-shadow: 0 0 25px rgba(217, 119, 6, 0.45); /* Gives that glowing outer radiance */
+}
+
+@keyframes goldGlowEffect {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container Box Fix: Disables all truncation or hidden clips */
+.img-fit-frame {
+    width: 100%;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* Target Image inside the Gold Card Frame */
+.img-fit-frame img {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+    border-radius: 10px; /* Snugs perfectly inside the gold glowing border */
+}
+
+/* Metric Element Block positioned safely underneath the photo bounds */
+.graphic-caption-block {
+    background-color: var(--primary-slate);
+    color: rgb(227, 233, 41);
+    padding: 1.25rem 1.75rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.1);
+    margin-top: 1.5rem; /* Even spacing beneath the glowing image card */
+}
+/* 7. Reinforced 6 Projects Pillar Grid Section */
+/* 7. Reinforced 6 Projects Pillar Grid Section - CARD LAYOUT ENGINE FIX */
+.pillars-deck {
+    background-color: var(--bg-orange);
+    padding: 6rem 0;
+    border-top: 1px solid var(--border-black);
+    border-bottom: 1px solid var(--border-black);
+}
+
+.center-head-block {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 4rem auto;
+}
+
+.center-head-block h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-slate);
+    margin-bottom: 1rem;
+}
+
+/* Stable Grid Container Matrix */
+.pillars-grid-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+    align-items: stretch; /* Forces all cards in a row to match heights perfectly */
+}
+
+/* Fixed Card Boundaries */
+.pillar-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-slate);
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    transition: var(--transition-fast);
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.pillar-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ISOLATED IMAGE SYSTEM: Forces every project image into a uniform aspect box */
+.pillar-card .pillar-image-frame {
+    width: 100%;
+    height: 220px !important; /* Fixed unified container height */
+    position: relative;
+    overflow: hidden !important; /* Strictly prevents vertical image bleeding */
+    background-color: #24e250;
+}
+
+/* Ensures the raw images fit perfectly inside the 220px box without distorting the cards */
+.pillar-card .pillar-image-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Crops multi-size source images cleanly to fill the space */
+    object-position: center !important;
+    display: block !important;
+}
+
+.icon-bubble {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--bg-white);
+    font-size: 1.3rem;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 12px 4px 8px rgba(0,0,0,0.06);
+    z-index: 10;
+}
+
+/* Stabilized Text Blocks System */
+.pillar-body-content {
+    padding: 2.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: var(--bg-white);
+}
+
+.pillar-body-content h4 {
+    font-size: 1.35rem;
+    color: var(--primary-slate);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.purpose-tag-box {
+    margin-bottom: 1.25rem;
+    height: 24px; 
+}
+
+.tag-label {
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    background-color: #d3dbe5;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.pillar-body-content p {
+    font-size: 0.95rem;
+    color: var(--body-dark);
+    line-height: 1.6;
+}
+
+/* 8. Facilities Ecosystem Grid Matrix (Why Join Us Focus) */
+.facilities-deck {
+    padding: 6rem 0;
+    background-color: var(--bg-blue);
+}
+
+.facilities-grid-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.facility-card {
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--border-slate);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.fac-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.fac-icon {
+    font-size: 1.75rem;
+}
+
+.facility-card h4 {
+    font-size: 1.2rem;
+    color: var(--primary-slate);
+    font-weight: 700;
+}
+
+.facility-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* 9. Premium Corporate Informational Footer */
+.corporate-footer {
+    background-color: #0B0F19;
+    color: #94A3B8;
+    padding: 5rem 0 2rem 0;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--accent-blue);
+}
+
+.footer-layout-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.footer-brand-meta {
+    max-width: 500px;
+}
+
+.footer-logo-title-align {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-badge {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-brand-meta h4 {
+    color: #FFFFFF;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.footer-motto {
+    color: #38BDF8;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+.footer-legal-copy {
+    line-height: 1.7;
+    color: #94A3B8;
+}
+
+.footer-compliance-matrix {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    max-width: 550px;
+}
+
+.matrix-pill {
+    background-color: #1E293B;
+    color: #E2E8F0;
+    padding: 0.45rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid #334155;
+}
+
+.footer-divider-line {
+    border: none;
+    border-top: 1px solid #1E293B;
+    margin: 4rem 0 1.5rem 0;
+}
+
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: #64748B;
+}
+
+.footer-dev-credit {
+    font-weight: 600;
+    color: #475569;
+}
+
+/* 10. High Fluid Device Media Queries Breakpoints */
+@media (max-width: 992px) {
+    .about-grid-matrix {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+    .about-graphic-column {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+    .master-brand-title {
+        font-size: 3.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-flex, .strip-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    .navigation-deck ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 1rem;
+        display: block;
+    }
+    .footer-top-row {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+/* ...aapka puraana css code yahan khatam hoga... */
+
+@media (max-width: 768px) {
+    .header-flex, .strip-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    /* ...ab tak ka saara purana media query code... */
+}
+
+/* =============================================================
+   IS LINE KE NEECHE APNA NAYA CODE PASTE KAR DIJIYE
+============================================================= */
+
+.every-action-section {
+    padding: 5rem 0 0 0;
+    background-color: var(--bg-white);
+}
+
+.impact-main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1E40AF;
+    margin-bottom: 0.5rem;
+}
+
+.impact-quote-text {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.alt-badge {
+    background-color: #F0FDF4 !important;
+    color: #16A34A !important;
+}
+
+.green-impact-canvas {
+    background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.green-canvas-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.green-impact-canvas h3 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.green-impact-canvas p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+}
+
+.green-canvas-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-canvas-white {
+    background-color: #FFFFFF;
+    color: #15803D;
+    border: none;
+    padding: 0.9rem 2rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: var(--transition-fast);
+}
+
+.btn-canvas-white:hover {
+    background-color: #F8FAFC;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.footer-grid-deck {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 3.5rem;
+    padding-bottom: 2rem;
+}
+
+.footer-col-block h5 {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer-col-block h5::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background-color: #38BDF8;
+}
+
+.contact-links-list {
+    list-style: none;
+}
+
+.contact-links-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #94A3B8;
+}
+
+.contact-links-list a {
+    color: #E2E8F0;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.contact-links-list a:hover {
+    color: #38BDF8;
+    text-decoration: underline;
+}
+
+.c-icon {
+    font-size: 1.1rem;
+}
+
+.social-info-lbl {
+    font-size: 0.85rem;
+    color: #64748B;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.social-media-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.social-btn-pill {
+    background-color: #1E293B;
+    color: #E2E8F0;
+    border: 1px solid #334155;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    transition: var(--transition-fast);
+}
+
+.social-btn-pill:hover {
+    background-color: #293548;
+    border-color: #38BDF8;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.footer-compliance-row {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.footer-hashtag-strip {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: #080C14;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    border: 1px solid #1E293B;
+}
+
+.footer-hashtag-strip p {
+    color: #38BDF8;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    word-spacing: 4px;
+}
+
+@media (max-width: 992px) {
+    .footer-grid-deck {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .green-impact-canvas h3 {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .green-canvas-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .social-media-links-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =============================================================
+   EXPANDED ANIMATION, ANIMATED BORDERS & IMPACT METRICS MODULE
+============================================================= */
+
+/* 1. Dynamic Interactive Background for Sections */
+.pillars-deck {
+    background: radial-gradient(circle at 10% 20%, rgba(248, 250, 252, 1) 0%, rgba(241, 245, 249, 1) 90%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adds a soft technical circuit grid layer behind the content canvas */
+.pillars-deck::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.pillars-deck .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* 2. Premium Neon Glow Border & Zoom Animation Flow */
+.dynamic-card-anim {
+    position: relative;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(15, 23, 42, 0.01), 0 10px 15px rgba(15, 23, 42, 0.03) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.dynamic-card-anim:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(30, 64, 175, 0.3) !important;
+    box-shadow: 0 20px 30px rgba(30, 64, 175, 0.08), 0 0 15px rgba(217, 119, 6, 0.15) !important;
+}
+
+/* Interactive zooming engine for project images on hover */
+.pillar-card:hover .pillar-image-frame img {
+    transform: scale(1.06);
+    filter: brightness(1.03);
+}
+
+.pillar-card .pillar-image-frame img {
+    transition: all 0.5s ease;
+}
+
+/* 3. Impact & Benefits Data Layout Grid System */
+.card-impact-metrics {
+    margin-top: auto; /* Pushes metrics directly to the base of the dynamic content height */
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--border-slate);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.metric-row {
+    font-size: 0.88rem;
+    color: #1E3A8A;
+    background-color: #EFF6FF;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    border-left: 3px solid #3B82F6;
+    line-height: 1.4;
+}
+
+.benefits-row {
+    font-size: 0.85rem;
+    color: #065F46;
+    background-color: #F0FDF4;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 500;
+    border-left: 3px solid #10B981;
+    line-height: 1.4;
+}
+
+/* Fine-tunes spacing inside card layouts to balance text fields */
+.base-desc {
+    margin-bottom: 1.5rem;
+    color: var(--body-dark);
+}
+
+/* 4. Fluid Mobile Adaptation Overrides */
+@media (max-width: 768px) {
+    .card-impact-metrics {
+        gap: 0.5rem;
+    }
+    .metric-row, .benefits-row {
+        font-size: 0.82rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
